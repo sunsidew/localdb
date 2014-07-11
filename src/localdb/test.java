@@ -1,11 +1,7 @@
 package localdb;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.util.ArrayList;
+
 
 public class test {
 
@@ -15,7 +11,12 @@ public class test {
 		filecontact.addtocontact(1,"yjw","01012345678");
 		filecontact.addtocontact(2,"tyt","01122535798");
 		
-//        ContactDao contactdao = new ContactDao();
-        
+		ArrayList<ContactDao> contactlist = filecontact.getContacts();
+		
+		for(ContactDao ctd : contactlist) {
+			System.out.println(ctd.getId());
+			System.out.println(ctd.getName());
+			System.out.println(ctd.getPhone());
+		}
 	}
 }
